@@ -1,0 +1,164 @@
+  
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            /* font-family: 'Roboto', sans-serif; */
+            background: linear-gradient(135deg, #0a1128 0%, #001f54 100%);
+            overflow: hidden;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            /* z-index: -1000; */
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .launch-app {
+            background-color: #ffffff;
+            color: #001f54;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .launch-app:hover {
+            background-color: #e5e5e5;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0%;
+            left: 10%;
+            transform: translateY(-50%);
+            text-align: left;
+            z-index: 10;
+            padding-top: -12rem;
+        }
+
+        .hero-content h2 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .buttons button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigate {
+            background-color: #ffffff;
+            color: #001f54;
+        }
+
+        .explore {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .navigate:hover {
+            background-color: #e5e5e5;
+        }
+
+        .explore:hover {
+            background-color: #ffffff;
+            color: #001f54;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.8em;
+            color: white;
+            opacity: 0.8;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* Chain Background */
+        #3d-chain {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Chain Image Fallback for the 3D Model */
+        .chain-background {
+           
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2; /* Adjust opacity for effect */
+            z-index: 2;
+            position: absolute;
+        }
