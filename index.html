@@ -8,8 +8,7 @@
     <style>
         body {
             margin: 0;
-            /* background-color: #023161; */
-            /* Deep blue background */
+            font-family: 'Roboto', sans-serif;
         }
 
         .canvas-container {
@@ -20,8 +19,7 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
-            /* background-color: blue; */
-            /* Make canvas container non-interactive */
+            background-color: blue;
         }
 
         canvas {
@@ -33,11 +31,62 @@
         .container {
             position: relative;
             z-index: 2;
-            /* Ensure UI components are on top */
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .launch-app {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+
+        .hero-sections {
+            display: flex;
+            justify-content: center;
+            gap: 52rem;
+            /* margin-top: 80px; */
+        }
+
+        .hero {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 55%;
+            box-sizing: border-box;
+        }
+
+        .buttons ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .buttons li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
         }
     </style>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -46,32 +95,61 @@
     </div>
     <div class="container">
         <header>
-            <div class="logo" >
-                <h1>chainery</h1>
+            <div class="logo">
+                <h1>Chainery</h1>
             </div>
             <button class="launch-app">Launch App</button>
         </header>
-        <section class="hero">
-            <!-- <div id="3d-chain"></div> -->
-            <div class="chain-background"></div> <!-- Optional Fallback Image -->
-            <div class="hero-content">
-                <h2>Hero Header</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor invidunt ut
-                    labore
-                    et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <div class="buttons">
-                    <button class="navigate">Navigate</button>
-                    <button class="explore">Explore</button>
+        <div class="hero-sections">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Simplify Smart Contract Development</h2>
+                    <p>At Chainery.io, we strive to simplify the complex process of smart contract development, making
+                        it accessible to
+                        individuals with varying levels of coding expertise.</p>
+                    <div class="buttons">
+                        <ul>
+                            <li>
+                                <a href="#" onclick="kevin()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fab fa-css3-alt"> Navigate</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#" onclick="kevin()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span class="fab fa-css3-alt"> Explore</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <section class="hero">
+                <div class="hero-content">
+                    <h3>Why Chainery?</h3>
+                    <p>Simplify and Accelerate Blockchain Development</p>
+
+                </div>
+            </section>
+        </div>
         <div class="scroll-indicator">SCROLL</div>
     </div>
-
-    <!-- Include Three.js and OBJLoader directly -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
 </body>
 
 </html>

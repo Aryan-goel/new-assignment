@@ -4,7 +4,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            /* font-family: 'Roboto', sans-serif; */
+            font-family: Montserrat;
             /* background: linear-gradient(135deg, #0a1128 0%, #001f54 100%,); */
             overflow: hidden;
             color: white;
@@ -38,16 +38,43 @@
         }
 
         .logo h1 {
-            font-size: 2.5em;
+            font-size: 2em; /* Increased font size for better visibility */
             margin: 0;
-            color: white;
+            color: white; /* Base color */
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             padding-left: 1rem;
+            margin-left: 650px;
+            font-family: cursive;
+            
+            /* Added styles */
+            background: linear-gradient(45deg, #74b6dc, #000000); /* Gradient background */
+            -webkit-background-clip: text; /* Clip background to text */
+            -webkit-text-fill-color: transparent; /* Make text color transparent */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            
+            /* Animation */
+            animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+        }
+        
+        /* Keyframes for fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px); /* Slight upward movement */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .launch-app {
+        .canvas-container{
+            background-color: blue;
+        }
+
+      .launch-app {
             background-color: #ffffff;
             color: #001f54;
             padding: 10px 20px;
@@ -55,11 +82,34 @@
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-right: 30px;
         }
-
+        
+        .launch-app:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
         .launch-app:hover {
-            background-color: #e5e5e5;
+            background-color: #001f54;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .launch-app:hover:before {
+            transform: translateX(100%);
         }
 
         .hero {
@@ -75,23 +125,31 @@
 
         .hero-content {
             position: absolute;
-            bottom: 0%;
-            left: 10%;
-            transform: translateY(-50%);
+            bottom: 100%;
+          
+            /* transform: translateY(-50%); */
             text-align: left;
             z-index: 10;
-            padding-top: -12rem;
+            
+            /* padding-top: -12rem; */
         }
 
         .hero-content h2 {
-            font-size: 4em;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 500;
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
+        .hero-content h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            
+        }
 
         .hero-content p {
-            font-size: 1.2em;
+            font-size: 1rem;
             max-width: 500px;
             line-height: 1.8;
             margin-bottom: 40px;
@@ -173,3 +231,60 @@
 /* background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%); */
 
         }
+
+        ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  margin: 0 40px;
+  transform: rotate(-30deg) skew(25deg);
+}
+
+ul li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+  background: #4169e1;
+  transition: 0.5s;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 20px !important;
+  margin-top: 2rem;
+}
+
+ul li:hover span:nth-child(5) {
+  transform: translate(40px, -40px);
+  opacity: 1;
+}
+
+ul li:hover span:nth-child(4) {
+  transform: translate(30px, -30px);
+  opacity: 0.8;
+}
+
+ul li:hover span:nth-child(3) {
+  transform: translate(20px, -20px);
+  opacity: 0.6;
+}
+
+ul li:hover span:nth-child(2) {
+  transform: translate(10px, -10px);
+  opacity: 0.4;
+}
+
+ul li:hover span:nth-child(1) {
+  transform: translate(0, 0);
+  opacity: 0.2;
+}
