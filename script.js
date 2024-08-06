@@ -4,11 +4,11 @@ function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(100, 100, 300); // Adjust the camera position to ensure the model is in view
+    camera.position.set(0, 0, 300); // Adjust the camera position to ensure the model is in view
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    document.querySelector('.canvas-container').appendChild(renderer.domElement);
 
     // Lighting setup
     const ambientLight = new THREE.AmbientLight(0x404040, 2);
@@ -44,7 +44,7 @@ function init() {
         model.position.set(0, 0, 0); // Center the model
 
         // Increase the scale of the model to make it larger
-        model.scale.set(5.5, 5.5, 5.5);
+        model.scale.set(12.5, 12.5, 12.5);
 
         // Create a pivot and add the model to it
         pivot = new THREE.Object3D();
