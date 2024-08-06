@@ -27,7 +27,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            z-index: -1;
+            /* background-color: #1b2845; */
+/* background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%); */
+
+            /* background-color: #001f54; */
+            /* opacity: 0.2; */
         }
 
         .logo h1 {
@@ -37,6 +42,7 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
+            padding-left: 1rem;
         }
 
         .launch-app {
@@ -161,4 +167,7 @@
             opacity: 0.2; /* Adjust opacity for effect */
             z-index: 2;
             position: absolute;
+         background-color: #1b2845;
+background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+
         }

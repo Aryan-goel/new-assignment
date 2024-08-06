@@ -30,8 +30,13 @@ function init() {
         const material = new THREE.MeshStandardMaterial({
             color: 0x0077ff,
             emissive: 0x0077ff,
-            metalness: 0.7,
-            roughness: 0.3
+            metalness: 1,
+            roughness: 0.3,
+            transparent: true,
+            opacity: 0.5,
+            wireframe: true,
+
+
         });
         model.traverse(function (child) {
             if (child.isMesh) {
@@ -40,12 +45,16 @@ function init() {
         });
 
         // Center the model and rotate to be vertical along the x-axis
-        model.rotation.z = Math.PI / 2;
-        model.position.set(0, 0, 0); // Center the model
+        // model.rotation.x = Math.PI / 4;
+        // model.rotation.z = Math.PI / 3;
+        // model.rotation.y = Math.PI / 4;
 
-        // Increase the scale of the model to make it larger
-        model.scale.set(12.5, 12.5, 12.5);
+        model.rotation.x = Math.PI / 3;  // Rotate 45 degrees around x-axis
+        model.rotation.z = Math.PI / 4;  // Rotate 45 degrees around z-axis
+        model.rotation.y = Math.PI / 4;  // Slight rotation around y-axis for better view
 
+        model.position.set(410, 400, 0); // Adjust the position to top left
+        model.scale.set(25, 25, 25);
         // Create a pivot and add the model to it
         pivot = new THREE.Object3D();
         pivot.add(model);
@@ -68,7 +77,9 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
     if (pivot) {
-        pivot.rotation.z += 0.01;
+        pivot.rotation.y += -0.02;
+        // // pivot.rotation.x += -0.01;
+        // pivot.rotation.z += -0.01;
     }
     renderer.render(scene, camera);
 }
