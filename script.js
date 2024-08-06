@@ -28,12 +28,12 @@ function init() {
 
         // Apply material to each child mesh
         const material = new THREE.MeshStandardMaterial({
-            color: 0x0077ff,
-            emissive: 0x0077ff,
+            color: 4169e1,
+            // emissive: 000000,
             metalness: 1,
             roughness: 0.3,
             transparent: true,
-            opacity: 0.5,
+            // opacity: 0.5,
             wireframe: true,
 
 
@@ -77,7 +77,7 @@ function onWindowResize() {
 function animate() {
     requestAnimationFrame(animate);
     if (pivot) {
-        pivot.rotation.y += -0.02;
+        pivot.rotation.y += -0.01;
         // // pivot.rotation.x += -0.01;
         // pivot.rotation.z += -0.01;
     }
